@@ -134,7 +134,7 @@ class ERAN:
         nn.zonotope = zonotope
         if domain == 'deepzono' or domain == 'refinezono':
             execute_list, output_info   = self.optimizer.get_deepzono(nn, zonotope)
-            analyzer       = Analyzer(execute_list, nn, domain, timeout_lp, timeout_milp, output_constraints, use_default_heuristic, testing, prop=prop)
+            analyzer       = Analyzer(execute_list, nn, domain, timeout_lp, timeout_milp, output_constraints, use_default_heuristic, testing = False, label = -1, prop=prop)
         elif domain == 'deeppoly' or domain == 'refinepoly':
             assert 0
             #execute_list   = self.optimizer.get_deeppoly(original, zonotope, True)
