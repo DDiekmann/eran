@@ -539,6 +539,8 @@ else:
 
     if dataset and config.input_box is None:
         tests = get_tests(dataset, config.geometric)
+    elif zonotope_bool:
+        pass
     else:
         tests = open(config.input_box, 'r').read()
         boxes = parse_input_box(tests)
